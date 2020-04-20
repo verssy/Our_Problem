@@ -12,12 +12,14 @@ using namespace std;
 // Function for reading data
 
 void read() {
+  vector<char> data;
+
   string path = "myfile.txt";
 
-  ifstream finp;
-  finp.open(path);
+  ifstream fin;
+  fin.open(path);
 
-  if (!finp.is_open()) {
+  if (!fin.is_open()) {
     cout << "Could not open file.\n";
   } else {
     cout << "File opened successfully.\n";
@@ -27,17 +29,14 @@ void read() {
     cout << "Your data:\n";
     while (fin.get(ch)) {
       cout << ch;
+      data.push_back(ch);
     }
 
     // Data release
 
-    finp.close();
+    fin.close();
 
     return;
   }
 
-
-int main() 
-{ 
-  return 0; 
-}
+  int main() { return 0; }
